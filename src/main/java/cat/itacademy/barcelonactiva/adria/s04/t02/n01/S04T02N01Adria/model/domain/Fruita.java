@@ -1,4 +1,4 @@
-package cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.entity;
+package cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.model.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

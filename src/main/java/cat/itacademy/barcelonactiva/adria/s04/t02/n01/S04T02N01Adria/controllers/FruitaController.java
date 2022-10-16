@@ -1,9 +1,7 @@
 package cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.controllers;
 
-import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.entity.Fruita;
-import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.repository.FruitaRepository;
-import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.service.FruitaService;
-import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.service.FruitaServiceImpl;
+import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.model.domain.Fruita;
+import cat.itacademy.barcelonactiva.adria.s04.t02.n01.S04T02N01Adria.model.service.FruitaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -54,16 +52,6 @@ public class FruitaController {
         Optional<Fruita> fruitaData = fruitaService.findById(id);
         if (fruitaData.isPresent()){
             return new ResponseEntity<>(fruitaData.get(), HttpStatus.OK);
-        }else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @GetMapping("/getOneByName/{name}")
-    public ResponseEntity<Fruita> getFruitaByName(@PathVariable("name") String name){
-        Fruita fruitaData = fruitaService.findByName(name).get();
-        if (fruitaData != null){
-            return new ResponseEntity<>(fruitaData, HttpStatus.OK);
         }else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
